@@ -58,6 +58,12 @@ resources:
       config:
         xsappname: 'risk-management-${org}-${space}'
         tenant-mode: dedicated
+        oauth2-configuration:
+          # <-- add this
+          redirect-uris:
+            # example: - https://risk-management-approuter.cfapps.eu10-004.hana.ondemand.com/login/callback
+            - https://**.hana.ondemand.com/login/callback
+
   - name: risk-management-db
     type: com.sap.xs.hdi-container
     parameters:
